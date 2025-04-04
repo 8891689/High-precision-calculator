@@ -74,8 +74,7 @@ BigIntError addBigInt(const BigInt *a, const BigInt *b, BigInt **result_ptr); //
 BigIntError subtractBigInt(const BigInt *a, const BigInt *b, BigInt **result_ptr);
 BigIntError nttMultiplyBigInt(const BigInt *a, const BigInt *b, BigInt **result_ptr);
 BigIntError multiplyBigIntByLL(const BigInt *a, long long b_ll, BigInt **result_ptr);
-// Provide the basic multiplyBigInt as well, maybe using NTT internally? Or keep schoolbook?
-// Let's make multiplyBigInt use NTT by default for this exercise.
+
 #define multiplyBigInt nttMultiplyBigInt
 
 // Division Functions (Adapted from division.c)
@@ -87,7 +86,7 @@ char* bigIntToDecimalString(const BigInt *a, const BigInt *b, int precision); //
 unsigned long long mod_pow(unsigned long long a, unsigned long long b, unsigned long long m);
 unsigned long long mod_inverse(unsigned long long a, unsigned long long m);
 void ntt(unsigned long long *a, int n, int invert);
-// ... other potential static helpers ...
+
 
 
 #endif // BIGINT_H
